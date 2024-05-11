@@ -1,0 +1,42 @@
+.Session1 {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+  .item {
+    transition: 200ms linear;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    transition: 200ms linear;
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 144%;
+    color: var(--text-Color);
+    width: 200px;
+    text-align: center;
+  }
+  .item:hover {
+    color: var(--primary-Color);
+    transform: scale(1.2);
+    .text {
+      color: var(--primary-Color);
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .Session1 {
+    .text {
+      width: 100% !important;
+    }
+    .item {
+      flex-direction: column;
+    }
+  }
+}

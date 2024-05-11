@@ -1,0 +1,150 @@
+.Booking {
+  background-color: #e5e5e5;
+  .main {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .list {
+      background-color: white;
+      border-radius: 3px;
+      .title {
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--secondary-Color);
+        line-height: normal;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--secondary-Color);
+      }
+      .items {
+        padding: 15px 20px;
+        .header {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: normal;
+          color: rgba(0, 0, 0, 0.87);
+        }
+        .item {
+          padding: 5px 0;
+          label {
+            display: flex;
+            align-items: center;
+            line-height: normal;
+            color: rgba(0, 0, 0, 0.87);
+            cursor: pointer;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .right {
+      .header {
+        border-radius: 3px;
+        padding: 0 20px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left,
+        .right {
+          color: var(--secondary-Color);
+          font-weight: 500;
+        }
+      }
+      .items {
+        .item {
+          border-radius: 3px;
+          margin: 20px 0;
+          padding: 20px;
+          background-color: white;
+          display: flex;
+          justify-content: center;
+
+          .middle {
+            padding: 0 10px;
+            .title,
+            .description,
+            .rate {
+              margin-bottom: 15px;
+            }
+            .title {
+              font-weight: 700;
+              font-size: 22px;
+              line-height: normal;
+              color: #3c3c3b;
+              text-decoration: none;
+              &:hover {
+                color: var(--secondary-Color);
+              }
+            }
+          }
+          & > .right {
+            border-left: 1px solid var(--secondary-Color);
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+            justify-content: center;
+            align-items: end;
+            .left {
+              .text {
+                color: gray;
+                font-size: 14px;
+                line-height: 21px;
+              }
+              .price {
+                font-size: 24px;
+                color: var(--primary-Color);
+                font-weight: 700;
+              }
+            }
+            .right {
+              button {
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 20px;
+                width: 100%;
+                height: 40px;
+                background: var(--secondary-Color);
+                border-radius: 5px;
+                color: #fff;
+                margin-top: 15px;
+                text-transform: uppercase;
+                transition: 0.1s ease-in-out;
+                &:hover {
+                  background: var(--primary-Color);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .Booking {
+    .search {
+      display: none;
+    }
+    .main {
+      .items {
+        .item {
+          flex-direction: column;
+          .middle {
+            border-bottom: 1px solid var(--secondary-Color) !important;
+            border-right: none !important;
+          }
+          & > .right {
+            border: none !important;
+            width: 100%;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+          }
+        }
+      }
+    }
+  }
+}

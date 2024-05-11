@@ -1,0 +1,116 @@
+.Session3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+  .container {
+    width: 80%;
+    .image {
+      flex: 1;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      &::after {
+        content: "";
+        transition: 200ms linear;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: var(--secondary-Color);
+      }
+      .title {
+        transition: 200ms linear;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 27px;
+        font-size: 18px;
+      }
+      img {
+        transition: 200ms linear;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #3c3c3b;
+    margin-bottom: 40px;
+    span {
+      font-weight: 800;
+    }
+  }
+  .item {
+    transition: all 1.5s linear;
+    height: 536px;
+    display: flex;
+    flex-direction: column;
+    .space {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+  .image:hover {
+    img {
+      transform: scale(1.1);
+    }
+    transition: 200ms linear;
+    &::after {
+      display: block;
+      opacity: 0.9;
+    }
+    .title {
+      z-index: 2;
+      top: 50%;
+    }
+  }
+}
+
+.more {
+  text-align: center;
+  margin-top: 40px;
+  a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--primary-Color);
+    padding: 11px 23px;
+    border: 1px solid var(--primary-Color);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  &:hover {
+    a {
+      background-color: var(--primary-Color);
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Session3 {
+    .title {
+      font-size: 26px !important;
+    }
+  }
+}

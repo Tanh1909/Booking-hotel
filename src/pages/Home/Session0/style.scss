@@ -1,0 +1,29 @@
+.Session0 {
+  .image {
+    width: 100%;
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+  .search {
+    width: 100%;
+    top: 0;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 992px) {
+  .Session0 {
+    .image {
+      max-width: 100%;
+      img {
+        height: 440px;
+        object-fit: cover;
+        object-fit: cover;
+      }
+    }
+    .search {
+      transform: translateY(-10%);
+    }
+  }
+}

@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+:root{
+  --primary-Color:#f2a900;
+  --secondary-Color:#002864;
+  --gray-Color:#f8f8f8;
+  --text-Color:#3c3c3b;
+
+}
+.popupCustom {
+  width: 160px !important;
+}
+.menu{
+  cursor: pointer;
+ 
+}
+.customDropdownItem{
+  font-size: 16px;
+  padding: 10px;
+}
+.customDropdownLink{
+  color: black;
+}
+.ant-dropdown-menu-item:hover{
+    background-color: transparent !important;
+}
+.ant-dropdown-menu-item:first-child{
+  border-top: var(--primary-Color) solid 3px;
+}
+.ant-dropdown-menu-item:hover .customDropdownLink{
+  color: var(--primary-Color);
+}
+
+.container{
+  width: 80%;
+}
+@media screen and (max-width: 992px) {
+  .container{
+    width: 95% !important;
+  }
 }
