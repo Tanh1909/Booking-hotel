@@ -2,6 +2,69 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  .search {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .marginBottom {
+    margin-bottom: 20px;
+  }
   .container {
+    .main1 {
+      display: flex;
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      border-radius: 3px;
+      background-color: white;
+      .right {
+        padding: 0 20px;
+        .address,
+        .phone,
+        .description {
+          margin-bottom: 15px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: normal;
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+    .main2 {
+      line-height: normal;
+      font-size: 16px;
+      padding: 20px 20px 40px 20px;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .Detail {
+    .search {
+      display: none;
+    }
+    .main1 {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .left {
+        width: 100%;
+        .ant-image {
+          object-fit: cover !important;
+          width: 100% !important;
+          height: 400px !important;
+          img {
+            height: 400px !important;
+          }
+        }
+      }
+      .right {
+        .title {
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }

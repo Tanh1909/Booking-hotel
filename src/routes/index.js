@@ -3,6 +3,8 @@ import DefaultLayout from "../layouts/DefaultLayout";
 import Booking from "../pages/Booking";
 import Detail from "../pages/Detail";
 import Home from "../pages/Home";
+import Payment from "../pages/Payment";
+import Troll from "../pages/Troll";
 
 const routes = [
   {
@@ -12,6 +14,10 @@ const routes = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
   },
@@ -28,6 +34,10 @@ const routes = [
         element: <Detail />,
       },
     ],
+  },
+  {
+    path: "/troll",
+    element: <Troll />,
   },
 ];
 export default routes;

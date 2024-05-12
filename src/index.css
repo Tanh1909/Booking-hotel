@@ -19,6 +19,10 @@ code {
   --text-Color:#3c3c3b;
 
 }
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
 .popupCustom {
   width: 160px !important;
 }
