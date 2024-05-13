@@ -65,9 +65,9 @@ function Payment() {
                       navigate(-1);
                     }}
                   >
-                    <Space>
+                    <Space align="center">
                       <LeftOutlined className="icon" />
-                      <p className="header__text">Quay lại</p>
+                      <div className="header__text">Quay lại</div>
                     </Space>
                   </button>
                   <div className="header__title">THÔNG TIN ĐẶT PHÒNG</div>
