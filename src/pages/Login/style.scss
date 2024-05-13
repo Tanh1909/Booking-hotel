@@ -1,0 +1,98 @@
+.Login {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  .left {
+    height: 100vh;
+    background-image: url("https://booking.muongthanh.com/images/login-banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 40px 100px 0 40px;
+    .summary {
+      .title {
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        margin-bottom: 8px;
+      }
+      .text {
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+  }
+  .right {
+    padding: 40px;
+    .main {
+      .nav-tabs {
+        padding-bottom: 10px;
+        a.active {
+          padding: 20px;
+          border-bottom: 4px solid #f2a900;
+          color: #333;
+          text-transform: capitalize;
+          font-size: 18px;
+          padding-bottom: 10px;
+        }
+      }
+      a {
+        padding-right: 1rem !important;
+        color: #3c3c3b;
+        &:hover {
+          color: #f2a900;
+        }
+      }
+      .ps-3 {
+        padding-left: 1rem !important;
+      }
+      .box {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #6d6e70;
+        position: relative;
+        .svg {
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          transform: translateY(-50%);
+        }
+        .checkbox {
+          height: fit-content;
+        }
+        input {
+          padding: 5px 40px !important;
+          height: 50px;
+          border-radius: 5px;
+          background: #fff;
+          border: 1px solid #ccc;
+          padding: 5px 20px;
+          font-size: 16px;
+          outline: none;
+          &:focus {
+            box-shadow: 0 0 8px rgba(210, 183, 110, 0.509);
+            border-color: #f2a900 !important;
+          }
+        }
+        .submitLogin {
+          background-color: #f2a900;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: normal;
+          height: 50px;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 18px;
+          text-transform: uppercase;
+          &:hover {
+            background-color: #ffedc2 !important;
+            border: 1px solid #f2a900 !important;
+            color: #f2a900 !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,8 +3,8 @@ import DefaultLayout from "../layouts/DefaultLayout";
 import Booking from "../pages/Booking";
 import Detail from "../pages/Detail";
 import Home from "../pages/Home";
+import Login from "../pages/Login";
 import Payment from "../pages/Payment";
-import Troll from "../pages/Troll";
 
 const routes = [
   {
@@ -36,8 +36,8 @@ const routes = [
     ],
   },
   {
-    path: "/troll",
-    element: <Troll />,
+    path: "/login",
+    element: <Login />,
   },
 ];
 export default routes;
