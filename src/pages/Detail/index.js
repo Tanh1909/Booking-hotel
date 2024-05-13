@@ -1,6 +1,7 @@
-import { Col, ConfigProvider, Image, Row, Space } from "antd";
+import { Col, ConfigProvider, Image, Row, Space, Tooltip } from "antd";
 import Search from "../../components/Search";
 import "./style.scss";
+import { Link } from "react-router-dom";
 function Detail() {
   return (
     <>
@@ -71,6 +72,275 @@ function Detail() {
               <strong>Vui lòng chọn phòng</strong>
               (Có 3 loại phòng theo tìm kiếm)
             </Space>
+          </div>
+          <div className="main3 ">
+            <div className="item marginBottom">
+              <div className="image">
+                <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
+              </div>
+              <div className="content">
+                <Space
+                  style={{ width: "100%" }}
+                  direction="vertical"
+                  size={"large"}
+                >
+                  <div className="title">
+                    <strong>Phòng Deluxe King hướng thành phố</strong>
+                  </div>
+                  <Space align="center" size={"large"}>
+                    <Space>
+                      <svg
+                        width="19"
+                        height="12"
+                        viewBox="0 0 19 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M2.375 7.2V0.6C2.375 0.271875 2.10596 0 1.78125 0H0.59375C0.269043 0 0 0.271875 0 0.6V12H2.375V9.6H16.625V12H19V7.8C19 7.47188 18.731 7.2 18.4062 7.2H2.375ZM7.71875 4.2C7.71875 5.52188 6.65185 6.6 5.34375 6.6C4.03564 6.6 2.96875 5.52188 2.96875 4.2C2.96875 2.87813 4.03564 1.8 5.34375 1.8C6.65185 1.8 7.71875 2.87813 7.71875 4.2ZM19 6.6H8.3125V3C8.3125 2.67187 8.58154 2.4 8.90625 2.4H15.4375C17.4043 2.4 19 4.0125 19 6V6.6Z"
+                          fill="black"
+                        ></path>
+                      </svg>
+                      <span>1 giường queen size</span>
+                    </Space>
+                    <Space>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 8L13 5V7H12V4H9V3H11L8 0L5 3H7V4H4V7H3V5L0 8L3 11V9H4V12H7V13H5L8 16L11 13H9V12H12V9H13V11L16 8ZM11 11H5V5H11V11Z"
+                          fill="black"
+                        ></path>
+                      </svg>
+                      <span>30 m2</span>
+                    </Space>
+                  </Space>
+                  <div className="service">
+                    <Space size={"large"}>
+                      <Tooltip title="Tủ quần áo">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                        />
+                      </Tooltip>
+                      <Tooltip title="Ga trải giường, gối">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                        />
+                      </Tooltip>
+                      <Tooltip title="Phòng không hút thuốc">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/no-smoking_1709957396.png"
+                        />
+                      </Tooltip>
+                    </Space>
+                  </div>
+                  <div className="footer">
+                    <div className="price">
+                      <Space direction="vertical">
+                        Giá chỉ từ
+                        <Space>
+                          <div className="price">2,142,000 VNĐ</div>/đêm
+                        </Space>
+                      </Space>
+                    </div>
+                    <div className="button">
+                      <Link to={"/payment"}>
+                        <button>Chọn phòng</button>
+                      </Link>
+                    </div>
+                  </div>
+                </Space>
+              </div>
+            </div>
+            <div className="item marginBottom">
+              <div className="image">
+                <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
+              </div>
+              <div className="content">
+                <Space
+                  style={{ width: "100%" }}
+                  direction="vertical"
+                  size={"large"}
+                >
+                  <div className="title">
+                    <strong>Phòng Deluxe King hướng thành phố</strong>
+                  </div>
+                  <Space align="center" size={"large"}>
+                    <Space>
+                      <svg
+                        width="19"
+                        height="12"
+                        viewBox="0 0 19 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M2.375 7.2V0.6C2.375 0.271875 2.10596 0 1.78125 0H0.59375C0.269043 0 0 0.271875 0 0.6V12H2.375V9.6H16.625V12H19V7.8C19 7.47188 18.731 7.2 18.4062 7.2H2.375ZM7.71875 4.2C7.71875 5.52188 6.65185 6.6 5.34375 6.6C4.03564 6.6 2.96875 5.52188 2.96875 4.2C2.96875 2.87813 4.03564 1.8 5.34375 1.8C6.65185 1.8 7.71875 2.87813 7.71875 4.2ZM19 6.6H8.3125V3C8.3125 2.67187 8.58154 2.4 8.90625 2.4H15.4375C17.4043 2.4 19 4.0125 19 6V6.6Z"
+                          fill="black"
+                        ></path>
+                      </svg>
+                      <span>1 giường queen size</span>
+                    </Space>
+                    <Space>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 8L13 5V7H12V4H9V3H11L8 0L5 3H7V4H4V7H3V5L0 8L3 11V9H4V12H7V13H5L8 16L11 13H9V12H12V9H13V11L16 8ZM11 11H5V5H11V11Z"
+                          fill="black"
+                        ></path>
+                      </svg>
+                      <span>30 m2</span>
+                    </Space>
+                  </Space>
+                  <div className="service">
+                    <Space size={"large"}>
+                      <Tooltip title="Tủ quần áo">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                        />
+                      </Tooltip>
+                      <Tooltip title="Ga trải giường, gối">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                        />
+                      </Tooltip>
+                      <Tooltip title="Phòng không hút thuốc">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/no-smoking_1709957396.png"
+                        />
+                      </Tooltip>
+                    </Space>
+                  </div>
+                  <div className="footer">
+                    <div className="price">
+                      <Space direction="vertical">
+                        Giá chỉ từ
+                        <Space>
+                          <div className="price">2,142,000 VNĐ</div>/đêm
+                        </Space>
+                      </Space>
+                    </div>
+                    <div className="button">
+                      <Link to={"/payment"}>
+                        <button>Chọn phòng</button>
+                      </Link>
+                    </div>
+                  </div>
+                </Space>
+              </div>
+            </div>
+            <div className="item marginBottom">
+              <div className="image">
+                <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
+              </div>
+              <div className="content">
+                <Space
+                  style={{ width: "100%" }}
+                  direction="vertical"
+                  size={"large"}
+                >
+                  <div className="title">
+                    <strong>Phòng Deluxe King hướng thành phố</strong>
+                  </div>
+                  <Space align="center" size={"large"}>
+                    <Space>
+                      <svg
+                        width="19"
+                        height="12"
+                        viewBox="0 0 19 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M2.375 7.2V0.6C2.375 0.271875 2.10596 0 1.78125 0H0.59375C0.269043 0 0 0.271875 0 0.6V12H2.375V9.6H16.625V12H19V7.8C19 7.47188 18.731 7.2 18.4062 7.2H2.375ZM7.71875 4.2C7.71875 5.52188 6.65185 6.6 5.34375 6.6C4.03564 6.6 2.96875 5.52188 2.96875 4.2C2.96875 2.87813 4.03564 1.8 5.34375 1.8C6.65185 1.8 7.71875 2.87813 7.71875 4.2ZM19 6.6H8.3125V3C8.3125 2.67187 8.58154 2.4 8.90625 2.4H15.4375C17.4043 2.4 19 4.0125 19 6V6.6Z"
+                          fill="black"
+                        ></path>
+                      </svg>
+                      <span>1 giường queen size</span>
+                    </Space>
+                    <Space>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 8L13 5V7H12V4H9V3H11L8 0L5 3H7V4H4V7H3V5L0 8L3 11V9H4V12H7V13H5L8 16L11 13H9V12H12V9H13V11L16 8ZM11 11H5V5H11V11Z"
+                          fill="black"
+                        ></path>
+                      </svg>
+                      <span>30 m2</span>
+                    </Space>
+                  </Space>
+                  <div className="service">
+                    <Space size={"large"}>
+                      <Tooltip title="Tủ quần áo">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                        />
+                      </Tooltip>
+                      <Tooltip title="Ga trải giường, gối">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                        />
+                      </Tooltip>
+                      <Tooltip title="Phòng không hút thuốc">
+                        <img
+                          width={20}
+                          height={20}
+                          src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/no-smoking_1709957396.png"
+                        />
+                      </Tooltip>
+                    </Space>
+                  </div>
+                  <div className="footer">
+                    <div className="price">
+                      <Space direction="vertical">
+                        Giá chỉ từ
+                        <Space>
+                          <div className="price">2,142,000 VNĐ</div>/đêm
+                        </Space>
+                      </Space>
+                    </div>
+                    <div className="button">
+                      <Link to={"/payment"}>
+                        <button>Chọn phòng</button>
+                      </Link>
+                    </div>
+                  </div>
+                </Space>
+              </div>
+            </div>
           </div>
         </div>
       </div>
