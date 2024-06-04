@@ -1,4 +1,4 @@
-import { Button, Dropdown, Flex, Select, Space } from "antd";
+import { Button, Drawer, Dropdown, Flex, Select, Space } from "antd";
 import logo from "../../assets/img/logo_1650360911.svg";
 import vi_language from "../../assets/img/language_vn.svg";
 import en_language from "../../assets/img/language_en.svg";
@@ -13,8 +13,15 @@ import {
   YoutubeFilled,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 function Header() {
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
   useEffect(() => {
     const handleScroll = (e) => {
       let logoElement = $(document.getElementById("logo"));
@@ -86,6 +93,11 @@ function Header() {
     <>
       <div className="Header">
         <Flex justify="space-around" align="center">
+          <div className="responsive">
+            <div className="menuIcon" onClick={() => showDrawer()}>
+              <MenuOutlined style={{ fontSize: 12 }} rotate={135} />
+            </div>
+          </div>
           <div className="left">
             <div className="icons">
               <Space size={"middle"}>
@@ -104,6 +116,7 @@ function Header() {
               <img src={logo} alt="logo" className="logo" id="logo" />
             </Link>
           </div>
+          <div className="responsive"></div>
           <div className="right">
             <Space size={"middle"}>
               <Link to="/login" className="login">
@@ -142,6 +155,86 @@ function Header() {
           </div>
         </Flex>
       </div>
+      <Drawer
+        title={
+          <Flex
+            style={{
+              width: "100%",
+            }}
+            align="center"
+            justify="center"
+          >
+            <Link to={"/"}>
+              <img
+                width={120}
+                height={50}
+                src={logo}
+                alt="logo"
+                className="logo"
+                id="logo"
+              />
+            </Link>
+          </Flex>
+        }
+        placement="left"
+        closable={false}
+        open={open}
+        onClose={onClose}
+        key={"left"}
+      >
+        <div className="list">
+          <div
+            style={{
+              fontSize: 20,
+              borderBottom: "1px solid gray",
+              padding: 10,
+            }}
+            className="list__item"
+          >
+            Trang chủ
+          </div>
+          <div
+            style={{
+              fontSize: 20,
+              borderBottom: "1px solid gray",
+              padding: 10,
+            }}
+            className="list__item"
+          >
+            Điểm đến
+          </div>
+          <div
+            style={{
+              fontSize: 20,
+              borderBottom: "1px solid gray",
+              padding: 10,
+            }}
+            className="list__item"
+          >
+            Ưu đãi
+          </div>
+          <div
+            style={{
+              fontSize: 20,
+              borderBottom: "1px solid gray",
+              padding: 10,
+            }}
+            className="list__item"
+          >
+            Combo
+          </div>
+          <div
+            style={{
+              fontSize: 20,
+              borderBottom: "1px solid gray",
+              padding: 10,
+            }}
+            className="list__item"
+          >
+            Tin tức
+          </div>
+        </div>
+      </Drawer>
     </>
   );
 }
