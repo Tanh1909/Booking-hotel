@@ -39,6 +39,7 @@
       }
     }
     .right {
+      // padding: 0 20px;
       .header {
         border-radius: 3px;
         padding: 10px 20px;
@@ -80,6 +81,7 @@
             }
           }
           & > .right {
+            padding: 0 20px;
             border-left: 1px solid var(--secondary-Color);
             display: flex;
             flex-direction: column;

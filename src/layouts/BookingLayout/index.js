@@ -5,7 +5,6 @@ import { Affix, Button } from "antd";
 import { useRef, useState } from "react";
 function BookingLayout() {
   const [container, setContainer] = useState(null);
-  console.log(container);
   return (
     <>
       <Header />
