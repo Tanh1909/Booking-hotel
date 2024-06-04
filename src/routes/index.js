@@ -5,7 +5,7 @@ import Detail from "../pages/Detail";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Payment from "../pages/Payment";
-
+import Troll from "../pages/Troll";
 const routes = [
   {
     path: "/",
@@ -38,6 +38,10 @@ const routes = [
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/troll",
+    element: <Troll />,
   },
 ];
 export default routes;

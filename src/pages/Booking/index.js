@@ -72,12 +72,11 @@ function Booking() {
               <Col xs={24} sm={24} md={24} lg={18} xl={18} className="right">
                 <div className="header">
                   <div className="left">CÓ 3 KHÁCH SẠN GẦN/ TẠI "HÀ NỘI"</div>
-                  <Space className="right">
-                    <p>
-                      <ArrowUpOutlined />
-                      <ArrowDownOutlined />
-                    </p>
-                    <p>Sắp xếp</p>
+                  <Space className="right" align="center">
+                    <ArrowUpOutlined />
+                    <ArrowDownOutlined />
+
+                    <span>Sắp xếp</span>
                     <Select
                       defaultValue={"Tăng dần"}
                       options={[

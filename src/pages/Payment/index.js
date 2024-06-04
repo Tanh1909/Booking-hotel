@@ -357,7 +357,7 @@ function Payment() {
           footer={null}
         >
           <Flex style={{ padding: 20 }} justify="center" align="center">
-            <QRCode size={400} value={"http://192.168.19.101:3000/troll"} />
+            <QRCode size={400} value={"http://192.168.143.59:3000/troll"} />
           </Flex>
         </Modal>
       </ConfigProvider>

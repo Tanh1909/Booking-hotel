@@ -102,7 +102,7 @@ function Login() {
                     <form
                       action=""
                       method="post"
-                      class="frmLogin"
+                      class="frmLogin "
                       id="frmLogin"
                     >
                       <div class="box">
