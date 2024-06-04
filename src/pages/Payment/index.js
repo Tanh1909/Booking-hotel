@@ -30,6 +30,13 @@ function Payment() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  const handleFinish = (e) => {
+    showModal();
+  };
+  const scrollError = {
+    behavior: "smooth",
+    block: "end",
+  };
   const options = [
     {
       value: "VN",
@@ -78,7 +85,12 @@ function Payment() {
             <Row gutter={[20, 0]}>
               <Col xs={24} sm={24} md={24} lg={17} xl={17}>
                 <div className="left">
-                  <Form className="form" layout="vertical">
+                  <Form
+                    scrollToFirstError={scrollError}
+                    className="form"
+                    onFinish={handleFinish}
+                    layout="vertical"
+                  >
                     <Row gutter={[20, 0]}>
                       <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                         <div className="left__header">
@@ -111,6 +123,7 @@ function Payment() {
                               rules={[
                                 {
                                   required: true,
+                                  message: <h6>Vui lòng nhập tên</h6>,
                                 },
                               ]}
                             >
@@ -126,6 +139,7 @@ function Payment() {
                           rules={[
                             {
                               required: true,
+                              message: <h6>Vui lòng nhập họ</h6>,
                             },
                           ]}
                         >
@@ -139,6 +153,7 @@ function Payment() {
                           rules={[
                             {
                               required: true,
+                              message: <h6>Vui lòng nhập email</h6>,
                             },
                           ]}
                         >
@@ -152,6 +167,7 @@ function Payment() {
                           rules={[
                             {
                               required: true,
+                              message: <h6>Vui lòng nhập lại email</h6>,
                             },
                           ]}
                         >
@@ -165,6 +181,7 @@ function Payment() {
                           rules={[
                             {
                               required: true,
+                              message: <h6>Vui lòng nhập số điện thoại</h6>,
                             },
                           ]}
                         >
@@ -183,11 +200,6 @@ function Payment() {
                         <Form.Item
                           name="country"
                           label={<div className="label">Quốc gia</div>}
-                          rules={[
-                            {
-                              required: true,
-                            },
-                          ]}
                         >
                           <Select
                             size="large"
@@ -213,110 +225,123 @@ function Payment() {
                         </Form.Item>
                       </Col>
                     </Row>
-                  </Form>
-                  <div className="policy">
-                    <div className="header">Chính sách đặt phòng</div>
-                    <Space align="start" size={"middle"}>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g clipPath="url(#clip0_941_18288)">
-                          <path
-                            d="M17.7955 3.45417L14.4622 0.12084C14.4232 0.0822231 14.3771 0.0516709 14.3263 0.0309356C14.2755 0.0102004 14.2212 -0.000310075 14.1663 6.96429e-06H3.33301C3.00149 6.96429e-06 2.68354 0.131703 2.44912 0.366123C2.2147 0.600544 2.08301 0.918486 2.08301 1.25001V18.75C2.08301 19.0815 2.2147 19.3995 2.44912 19.6339C2.68354 19.8683 3.00149 20 3.33301 20H16.6663C16.9979 20 17.3158 19.8683 17.5502 19.6339C17.7846 19.3995 17.9163 19.0815 17.9163 18.75V3.75001C17.9167 3.69517 17.9061 3.64081 17.8854 3.59005C17.8647 3.53928 17.8341 3.49311 17.7955 3.45417ZM14.583 1.42084L16.4955 3.33334H14.9997C14.8892 3.33334 14.7832 3.28944 14.705 3.2113C14.6269 3.13316 14.583 3.02718 14.583 2.91667V1.42084ZM17.083 18.75C17.083 18.8605 17.0391 18.9665 16.961 19.0446C16.8828 19.1228 16.7768 19.1667 16.6663 19.1667H3.33301C3.2225 19.1667 3.11652 19.1228 3.03838 19.0446C2.96024 18.9665 2.91634 18.8605 2.91634 18.75V1.25001C2.91634 1.1395 2.96024 1.03352 3.03838 0.955379C3.11652 0.877239 3.2225 0.83334 3.33301 0.83334H13.7497V2.91667C13.7497 3.24819 13.8814 3.56614 14.1158 3.80056C14.3502 4.03498 14.6682 4.16667 14.9997 4.16667H17.083V18.75Z"
-                            fill="#3C3C3B"
-                          ></path>
-                          <path
-                            d="M15.0003 7.5H6.66699V8.33333H15.0003V7.5Z"
-                            fill="#3C3C3B"
-                          ></path>
-                          <path
-                            d="M15 10H5V10.8333H15V10Z"
-                            fill="#3C3C3B"
-                          ></path>
-                          <path
-                            d="M15 12.5H5V13.3333H15V12.5Z"
-                            fill="#3C3C3B"
-                          ></path>
-                          <path
-                            d="M11.6667 15H5V15.8333H11.6667V15Z"
-                            fill="#3C3C3B"
-                          ></path>
-                          <path
-                            d="M15.0003 15H14.167V15.8333H15.0003V15Z"
-                            fill="#3C3C3B"
-                          ></path>
-                          <path
-                            d="M13.3333 15H12.5V15.8333H13.3333V15Z"
-                            fill="#3C3C3B"
-                          ></path>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_941_18288">
-                            <rect width="20" height="20" fill="white"></rect>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <div className="list">
-                        <div className="title">Phòng Deluxe Twin</div>
-                        <div className="text">
-                          <Space>
-                            <strong>Hủy:</strong>
-                            Nếu hủy, thay đổi hoặc không đến, khách sẽ trả toàn
-                            bộ giá trị tiền đặt phòng.
-                          </Space>
+
+                    <div className="policy">
+                      <div className="header">Chính sách đặt phòng</div>
+                      <Space align="start" size={"middle"}>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clipPath="url(#clip0_941_18288)">
+                            <path
+                              d="M17.7955 3.45417L14.4622 0.12084C14.4232 0.0822231 14.3771 0.0516709 14.3263 0.0309356C14.2755 0.0102004 14.2212 -0.000310075 14.1663 6.96429e-06H3.33301C3.00149 6.96429e-06 2.68354 0.131703 2.44912 0.366123C2.2147 0.600544 2.08301 0.918486 2.08301 1.25001V18.75C2.08301 19.0815 2.2147 19.3995 2.44912 19.6339C2.68354 19.8683 3.00149 20 3.33301 20H16.6663C16.9979 20 17.3158 19.8683 17.5502 19.6339C17.7846 19.3995 17.9163 19.0815 17.9163 18.75V3.75001C17.9167 3.69517 17.9061 3.64081 17.8854 3.59005C17.8647 3.53928 17.8341 3.49311 17.7955 3.45417ZM14.583 1.42084L16.4955 3.33334H14.9997C14.8892 3.33334 14.7832 3.28944 14.705 3.2113C14.6269 3.13316 14.583 3.02718 14.583 2.91667V1.42084ZM17.083 18.75C17.083 18.8605 17.0391 18.9665 16.961 19.0446C16.8828 19.1228 16.7768 19.1667 16.6663 19.1667H3.33301C3.2225 19.1667 3.11652 19.1228 3.03838 19.0446C2.96024 18.9665 2.91634 18.8605 2.91634 18.75V1.25001C2.91634 1.1395 2.96024 1.03352 3.03838 0.955379C3.11652 0.877239 3.2225 0.83334 3.33301 0.83334H13.7497V2.91667C13.7497 3.24819 13.8814 3.56614 14.1158 3.80056C14.3502 4.03498 14.6682 4.16667 14.9997 4.16667H17.083V18.75Z"
+                              fill="#3C3C3B"
+                            ></path>
+                            <path
+                              d="M15.0003 7.5H6.66699V8.33333H15.0003V7.5Z"
+                              fill="#3C3C3B"
+                            ></path>
+                            <path
+                              d="M15 10H5V10.8333H15V10Z"
+                              fill="#3C3C3B"
+                            ></path>
+                            <path
+                              d="M15 12.5H5V13.3333H15V12.5Z"
+                              fill="#3C3C3B"
+                            ></path>
+                            <path
+                              d="M11.6667 15H5V15.8333H11.6667V15Z"
+                              fill="#3C3C3B"
+                            ></path>
+                            <path
+                              d="M15.0003 15H14.167V15.8333H15.0003V15Z"
+                              fill="#3C3C3B"
+                            ></path>
+                            <path
+                              d="M13.3333 15H12.5V15.8333H13.3333V15Z"
+                              fill="#3C3C3B"
+                            ></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_941_18288">
+                              <rect width="20" height="20" fill="white"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <div className="list">
+                          <div className="title">Phòng Deluxe Twin</div>
+                          <div className="text">
+                            <Space>
+                              <strong>Hủy:</strong>
+                              Nếu hủy, thay đổi hoặc không đến, khách sẽ trả
+                              toàn bộ giá trị tiền đặt phòng.
+                            </Space>
+                          </div>
+                          <div className="text">
+                            <Space>
+                              <strong>Thanh toán:</strong>
+                              Thanh toán toàn bộ giá trị tiền đặt phòng.
+                            </Space>
+                          </div>
+                          <div className="text">
+                            <strong>Đã bao gồm ăn sáng</strong>
+                          </div>
                         </div>
-                        <div className="text">
-                          <Space>
-                            <strong>Thanh toán:</strong>
-                            Thanh toán toàn bộ giá trị tiền đặt phòng.
-                          </Space>
-                        </div>
-                        <div className="text">
-                          <strong>Đã bao gồm ăn sáng</strong>
-                        </div>
-                      </div>
-                    </Space>
-                  </div>
-                  <div className="payment">
-                    <div className="header">Phương thức thanh toán</div>
-                    <Space
-                      size={"large"}
-                      direction="vertical"
-                      style={{ width: "100%" }}
-                    >
-                      <Select
+                      </Space>
+                    </div>
+                    <div className="payment">
+                      <div className="header">Phương thức thanh toán</div>
+                      <Space
+                        size={"large"}
+                        direction="vertical"
                         style={{ width: "100%" }}
-                        size="large"
-                        placeholder={`  Online payment via International Cards (visa,
-                            Master, JCB, Amex, CUP)`}
                       >
-                        <Option>
-                          <Space>
-                            <Image
-                              width={40}
-                              height={20}
-                              src="https://vcdn-kinhdoanh.vnecdn.net/2009/02/11/31-1367011326_500x0.JPG"
-                            />
-                            Onepay VietNam (Thẻ ATM)
+                        <Select
+                          style={{ width: "100%" }}
+                          size="large"
+                          placeholder={`  Online payment via International Cards (visa,
+                            Master, JCB, Amex, CUP)`}
+                        >
+                          <Option>
+                            <Space>
+                              <Image
+                                width={40}
+                                height={20}
+                                src="https://vcdn-kinhdoanh.vnecdn.net/2009/02/11/31-1367011326_500x0.JPG"
+                              />
+                              Onepay VietNam (Thẻ ATM)
+                            </Space>
+                          </Option>
+                        </Select>
+                        <Form.Item
+                          name="policy"
+                          rules={[
+                            {
+                              required: true,
+                              message: <h6>Vui lòng tick đồng ý</h6>,
+                            },
+                          ]}
+                        >
+                          <Radio.Group>
+                            <Radio value={1}>
+                              Vui lòng đọc kỹ và đồng ý với điều khoản đặt phòng
+                              bằng cách đánh dấu vào ô bên cạnh.
+                            </Radio>
+                          </Radio.Group>
+                        </Form.Item>
+                        <button htmltype="submit" className="submit">
+                          <Space size={"large"}>
+                            <LockOutlined />
+                            THỰC HIỆN ĐẶT PHÒNG
                           </Space>
-                        </Option>
-                      </Select>
-                      <Radio value={1}>
-                        Vui lòng đọc kỹ và đồng ý với điều khoản đặt phòng bằng
-                        cách đánh dấu vào ô bên cạnh.
-                      </Radio>
-                      <button onClick={() => showModal()} className="submit">
-                        <Space size={"large"}>
-                          <LockOutlined />
-                          THỰC HIỆN ĐẶT PHÒNG
-                        </Space>
-                      </button>
-                    </Space>
-                  </div>
+                        </button>
+                      </Space>
+                    </div>
+                  </Form>
                 </div>
               </Col>
               <Col xs={24} sm={24} md={24} lg={7} xl={7}>
