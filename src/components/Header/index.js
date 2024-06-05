@@ -14,7 +14,11 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutAction } from "../../redux/action/login";
 function Header() {
+  const value = useSelector((state) => state.loginReducer);
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
@@ -119,9 +123,18 @@ function Header() {
           <div className="responsive"></div>
           <div className="right">
             <Space size={"middle"}>
-              <Link to="/login" className="login">
-                Đăng nhập
+              <Link
+                to="/login"
+                className="login"
+                onClick={() => {
+                  if (value.username) {
+                    dispatch(logoutAction());
+                  }
+                }}
+              >
+                {value.username ? "Đăng xuất" : "Đăng nhập"}
               </Link>
+
               <Select
                 popupClassName="popupCustom"
                 variant="borderless"

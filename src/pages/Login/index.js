@@ -1,11 +1,77 @@
 // import { Col, Container, Row } from "react-bootstrap";
-import { Button, Checkbox, Col, Flex, Form, Input, Row, Space } from "antd";
+import {
+  Button,
+  Checkbox,
+  Col,
+  Flex,
+  Form,
+  Input,
+  Row,
+  notification,
+} from "antd";
 import "./style.scss";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../../redux/action/index";
 function Login() {
+  const fakeUser = [
+    {
+      username: "dtienanh",
+      password: "tanh",
+    },
+    {
+      username: "hquocchien",
+      password: "chien",
+    },
+    {
+      username: "nmanhcuong",
+      password: "cuong",
+    },
+  ];
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [api, contextHolder] = notification.useNotification();
+  const openNotificationWithIcon = (type) => {
+    api[type]({
+      message: "Sai tài khoản hoặc mật khẩu",
+      duration: 1,
+    });
+    console.log(type);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let login = false;
+    fakeUser.forEach((object) => {
+      if (
+        object.username == formData.username &&
+        object.password == formData.password
+      ) {
+        login = true;
+        dispatch(loginAction(formData));
+        navigate("/");
+      }
+    });
+    if (!login) {
+      openNotificationWithIcon("error");
+    }
+  };
   return (
     <>
+      {contextHolder}
       <div className="Login">
         <Row>
           <Col xs={0} sm={0} md={0} lg={14} xl={14}>
@@ -100,10 +166,11 @@ function Login() {
                     id="Log"
                   >
                     <form
-                      action=""
+                      action="#"
                       method="post"
                       class="frmLogin "
                       id="frmLogin"
+                      onSubmit={handleSubmit}
                     >
                       <div class="box">
                         <div class="svg">
@@ -133,8 +200,10 @@ function Login() {
                           </svg>
                         </div>
                         <input
+                          onChange={handleChange}
+                          value={formData.username}
                           id="log_name"
-                          name="log_name"
+                          name="username"
                           type="text"
                           class="form-control"
                           placeholder="Email"
@@ -170,8 +239,10 @@ function Login() {
                           </svg>
                         </div>
                         <input
+                          value={formData.password}
+                          onChange={handleChange}
                           id="log_pass"
-                          name="log_pass"
+                          name="password"
                           type="password"
                           class="form-control"
                           placeholder="Mật khẩu / Password"
@@ -197,9 +268,13 @@ function Login() {
                         </a>
                       </div>
                       <div class="box">
-                        <Link to={"/"} className="submitLogin submit-btn">
+                        <button
+                          type="submit"
+                          className="submitLogin submit-btn"
+                        >
                           Đăng nhập / login
-                        </Link>
+                        </button>
+                        <Link to={"/"}></Link>
                       </div>
                     </form>
                   </div>
