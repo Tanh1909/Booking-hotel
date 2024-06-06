@@ -1,10 +1,226 @@
-import { Col, ConfigProvider, Image, Row, Space, Tooltip } from "antd";
+import {
+  Button,
+  Col,
+  ConfigProvider,
+  Flex,
+  Image,
+  Modal,
+  Row,
+  Space,
+  Tooltip,
+} from "antd";
 import Search from "../../components/Search";
 import "./style.scss";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 function Detail() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
+      <Modal
+        width={"50%"}
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <Space direction="vertical" size={"middle"}>
+          <Flex
+            className="main1 marginBottom"
+            align="center"
+            justify="center"
+            gap={20}
+          >
+            <div className="left">
+              <Image
+                className="image"
+                width={300}
+                height={200}
+                src="https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-xa-la-3_1696826188.jpg"
+              />
+            </div>
+            <div
+              className="right"
+              style={{
+                padding: 20,
+              }}
+            >
+              <h2 className="title">Mường Thanh Grand Xa La</h2>
+              <Space className="address">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 6.66666C14 11.3333 8 15.3333 8 15.3333C8 15.3333 2 11.3333 2 6.66666C2 5.07536 2.63214 3.54923 3.75736 2.42402C4.88258 1.2988 6.4087 0.666656 8 0.666656C9.5913 0.666656 11.1174 1.2988 12.2426 2.42402C13.3679 3.54923 14 5.07536 14 6.66666Z"
+                    stroke="#626262"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M8 8.66666C9.10457 8.66666 10 7.77123 10 6.66666C10 5.56209 9.10457 4.66666 8 4.66666C6.89543 4.66666 6 5.56209 6 6.66666C6 7.77123 6.89543 8.66666 8 8.66666Z"
+                    stroke="#626262"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+                Số 66, đường Phúc La, khu đô thị Xa La, phường Phúc La, quận Hà
+                Đông, Hà Nội, Việt Nam
+              </Space>
+              <div className="phone">
+                Điện thoại:{" "}
+                <span style={{ fontWeight: "bold" }}>+84 24 3311 5555</span>
+              </div>
+              <div className="description">
+                <strong>Khách sạn Mường Thanh Grand Xa La</strong>
+              </div>
+            </div>
+          </Flex>
+          <h5>Tiện ích trong phòng</h5>
+          <Row>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Tủ quần áo">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                  />
+                </Tooltip>
+                <div>Tủ quần áo</div>
+              </Space>
+            </Col>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Ga trải giường, gối">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                  />
+                </Tooltip>
+                <div>Ga trải giường</div>
+              </Space>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Tủ quần áo">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                  />
+                </Tooltip>
+                <div>Tủ quần áo</div>
+              </Space>
+            </Col>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Ga trải giường, gối">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                  />
+                </Tooltip>
+                <div>Ga trải giường</div>
+              </Space>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Tủ quần áo">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                  />
+                </Tooltip>
+                <div>Tủ quần áo</div>
+              </Space>
+            </Col>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Ga trải giường, gối">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                  />
+                </Tooltip>
+                <div>Ga trải giường</div>
+              </Space>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Tủ quần áo">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                  />
+                </Tooltip>
+                <div>Tủ quần áo</div>
+              </Space>
+            </Col>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Ga trải giường, gối">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                  />
+                </Tooltip>
+                <div>Ga trải giường</div>
+              </Space>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Tủ quần áo">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                  />
+                </Tooltip>
+                <div>Tủ quần áo</div>
+              </Space>
+            </Col>
+            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Ga trải giường, gối">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                  />
+                </Tooltip>
+                <div>Ga trải giường</div>
+              </Space>
+            </Col>
+          </Row>
+        </Space>
+      </Modal>
       <div className="Detail">
         <div className="search">
           <ConfigProvider
@@ -64,6 +280,15 @@ function Detail() {
                 trong lành, ngay tại trung tâm Quận Hà Đông, Hà Nội. Thoải mái
                 và tiện nghi là những cảm nhận đầu tiên khi du khách đặt chân
                 đến nơi đây.
+              </div>
+              <div
+                onClick={showModal}
+                style={{
+                  cursor: "pointer",
+                  color: "var(--primary-Color",
+                }}
+              >
+                Xem chi tiết
               </div>
             </div>
           </div>
@@ -245,7 +470,13 @@ function Detail() {
                     </div>
                     <div className="button">
                       <Link to={"/payment"}>
-                        <button>Chọn phòng</button>
+                        <button
+                          style={{
+                            backgroundColor: "var(--secondary-Color)",
+                          }}
+                        >
+                          Hết phòng
+                        </button>
                       </Link>
                     </div>
                   </div>

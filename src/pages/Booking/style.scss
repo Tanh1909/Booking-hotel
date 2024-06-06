@@ -101,6 +101,9 @@
               }
             }
             .right {
+              .unavaiable {
+                background: var(--secondary-Color);
+              }
               button {
                 border: none;
                 display: flex;
@@ -109,14 +112,14 @@
                 padding: 12px 20px;
                 width: 100%;
                 height: 40px;
-                background: var(--secondary-Color);
+                background: var(--primary-Color);
                 border-radius: 5px;
                 color: #fff;
                 margin-top: 15px;
                 text-transform: uppercase;
                 transition: 0.1s ease-in-out;
                 &:hover {
-                  background: var(--primary-Color);
+                  background: var(--secondary-Color);
                 }
               }
             }

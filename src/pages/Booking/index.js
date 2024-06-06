@@ -30,6 +30,7 @@ function Booking() {
       review: 13,
       price: 1317600,
       type: "grand",
+      avaiable: true,
     },
     {
       imgLink:
@@ -41,6 +42,7 @@ function Booking() {
       review: 30,
       price: 2142000,
       type: "luxury",
+      avaiable: true,
     },
     {
       imgLink:
@@ -52,6 +54,7 @@ function Booking() {
       review: 6,
       price: 1458000,
       type: "holiday",
+      avaiable: false,
     },
     {
       imgLink:
@@ -63,6 +66,7 @@ function Booking() {
       review: 7,
       price: 1800000,
       type: "grand",
+      avaiable: true,
     },
   ]
     .sort((a, b) => {
@@ -267,9 +271,13 @@ function Booking() {
                             <div className="text">phòng/đêm</div>
                           </div>
                           <div className="right">
-                            <Link to={"/booking/detail"}>
-                              <button>Đặt ngay</button>
-                            </Link>
+                            {value.avaiable ? (
+                              <Link to={"/booking/detail"}>
+                                <button>Đặt ngay</button>
+                              </Link>
+                            ) : (
+                              <button className="unavaiable">Hết Phòng</button>
+                            )}
                           </div>
                         </div>
                       </div>
