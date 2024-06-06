@@ -1,5 +1,5 @@
 import Search from "../../../components/Search";
-import img from "../../../assets/img/huyen-thoai-dien-bien-phu-hao-khi-muong-thanh_1711186849.jpg";
+import img from "../../../assets/img/wta-program_banner-tap-doan-1650x650px_1716523081_1716951735.jpg";
 import "./style.scss";
 import { ConfigProvider } from "antd";
 
