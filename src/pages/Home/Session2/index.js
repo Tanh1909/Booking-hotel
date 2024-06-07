@@ -54,9 +54,9 @@ function Session2() {
   return (
     <>
       <div class="Session2 container px-0" style={{paddingBottom: 100}}>
-        <div class="text-center" style={{fontSize: 40, marginBottom: 40}}>
-            <span class="fw-bold">THƯƠNG HIỆU</span>
-            <span>NỔI BẬT</span>
+        <div class="text-center Session2Title" style={{fontSize: 40, marginBottom: 40}}>
+            <span style={{fontWeight: 800}}>THƯƠNG HIỆU</span>
+            <span style={{fontWeight: 300}}> NỔI BẬT</span>
         </div>
         <div id="brandCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
             <div class="carousel-inner">

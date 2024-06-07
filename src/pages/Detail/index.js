@@ -299,11 +299,11 @@ function Detail() {
             </Space>
           </div>
           <div className="main3 ">
-            <div className="item marginBottom">
-              <div className="image">
+            <div className="item row m-0 mb-4">
+              <div className="image col-sm-5 col-md-5 col-lg-5">
                 <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
               </div>
-              <div className="content">
+              <div className="content col-sm-7 col-md-7 col-lg-7">
                 <Space
                   style={{ width: "100%" }}
                   direction="vertical"
@@ -374,9 +374,7 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                        <Space>
                           <div className="price">2,142,000 VNĐ</div>/đêm
-                        </Space>
                       </Space>
                     </div>
                     <div className="button">
@@ -388,11 +386,11 @@ function Detail() {
                 </Space>
               </div>
             </div>
-            <div className="item marginBottom">
-              <div className="image">
+            <div className="item row m-0 mb-4">
+              <div className="image col-sm-5 col-md-5 col-lg-5">
                 <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
               </div>
-              <div className="content">
+              <div className="content col-sm-7 col-md-7 col-lg-7">
                 <Space
                   style={{ width: "100%" }}
                   direction="vertical"
@@ -463,31 +461,21 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                        <Space>
                           <div className="price">2,142,000 VNĐ</div>/đêm
-                        </Space>
                       </Space>
                     </div>
                     <div className="button">
-                      <Link to={"/payment"}>
-                        <button
-                          style={{
-                            backgroundColor: "var(--secondary-Color)",
-                          }}
-                        >
-                          Hết phòng
-                        </button>
-                      </Link>
+                      <button style={{ backgroundColor: "var(--secondary-Color)" }}>Hết phòng</button>
                     </div>
                   </div>
                 </Space>
               </div>
             </div>
-            <div className="item marginBottom">
-              <div className="image">
+            <div className="item row m-0 mb-4">
+              <div className="image col-sm-5 col-md-5 col-lg-5">
                 <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
               </div>
-              <div className="content">
+              <div className="content col-sm-7 col-md-7 col-lg-7">
                 <Space
                   style={{ width: "100%" }}
                   direction="vertical"
@@ -558,9 +546,7 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                        <Space>
                           <div className="price">2,142,000 VNĐ</div>/đêm
-                        </Space>
                       </Space>
                     </div>
                     <div className="button">

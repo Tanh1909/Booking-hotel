@@ -15,8 +15,10 @@ import "./style.scss";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import $ from "jquery";
 
 function Booking() {
+  const [color, setColor] = useState(true);
   const [sort, setSort] = useState("asc");
   const [filter, setFilter] = useState([]);
   const data = [
@@ -90,6 +92,22 @@ function Booking() {
     style: "currency",
     currency: "VND",
   });
+
+  $(document).ready(function () {
+    function adjustSearch() {
+        if ($(window).width() < 992) {
+            $('.Search').addClass('container pt-3');
+            setColor(false);
+        } else {
+            $('.Search').removeClass('container pt-3');
+            setColor(true);
+        }
+    }
+    adjustSearch();
+    $(window).resize(function () {
+      adjustSearch();
+    });
+});
   return (
     <>
       <ConfigProvider
@@ -116,7 +134,7 @@ function Booking() {
                 },
               }}
             >
-              <Search booking={true} />
+              <Search booking={color} />
             </ConfigProvider>
           </div>
           <div className="main">

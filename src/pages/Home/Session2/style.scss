@@ -1,5 +1,4 @@
 .Session2 {
-
   .Tab1 {
     width: 100%;
     display: flex;
@@ -123,5 +122,19 @@
   
   .carousel-control-prev-icon, .carousel-control-next-icon {
     background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Session2 {
+    .Session2Title {
+      font-size: 26px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Session2 {
+    padding-bottom: 150px !important;
   }
 }
