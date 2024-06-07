@@ -1,89 +1,62 @@
 .Session4 {
-  background-color: var(--gray-Color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .container {
-    padding: 50px 0;
-    width: 80%;
-    .list {
-      margin-bottom: 10px;
-      .listItem {
-        padding: 16px 8px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        text-transform: uppercase;
-        &:first-child {
-          color: var(--primary-Color);
-        }
-      }
-    }
-    .map {
-      display: flex;
-      .content {
-        width: 70%;
-        .left {
-          display: flex;
-          .items {
-            margin-left: 30px;
-            .item {
-              .title {
-                color: var(--primary-Color);
-                font-weight: 300;
-                font-size: 60px;
-                line-height: 20px;
-                text-transform: uppercase;
-                color: var(--primary-Color);
-                margin-bottom: 30px;
-              }
-              P {
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-                text-transform: uppercase;
-                color: var(--text-Color);
-                margin-bottom: 50px;
-              }
-            }
-          }
-        }
-        .text {
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          color: var(--text-Color);
-        }
-      }
-    }
-    .textMobile {
-      display: none;
-    }
-    .img {
-      padding-right: 80px;
-      width: 30%;
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
-    }
+  .nav-link.active {
+    background-color: transparent !important;
+    color: var(--primary-Color) !important;
+  }
+  .nav-link {
+    color: inherit;
+    text-align: left;
+  }
+  .nav-link:hover {
+    color: var(--primary-Color) !important;
   }
 }
 
 @media screen and (max-width: 992px) {
   .Session4 {
-    .list {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    #v-pills-tab {
+        justify-content: space-between;
+        margin-right: 0 !important;
+        margin-bottom: 10px;
     }
-    .textDesktop {
-      display: none;
+    #responsive-left {
+        flex: 1 1 40%;
+        max-width: 40%;
+        padding-right: 15px !important;
+        padding-top: 10px;
     }
-    .textMobile {
-      display: block !important;
+    #responsive-right {
+        flex: 1 1 60%;
+        max-width: 60%;
+    }
+    #responsive-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Session4 {
+    #responsive-left {
+        flex: 1 1 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    #responsive-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+        display: flex;
+    }
+    #responsive-right-2 {
+        margin-top: 20px !important;
+        padding-left: 30px;
+    }
+    #province-icon {
+        margin-top: 90px !important;
     }
   }
 }
