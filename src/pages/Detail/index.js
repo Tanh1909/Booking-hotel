@@ -13,7 +13,9 @@ import Search from "../../components/Search";
 import "./style.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import $ from "jquery";
 function Detail() {
+  const [width, setWidth] = useState("50%");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -24,36 +26,40 @@ function Detail() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  $(document).ready(function () {
+    function adjustSearch() {
+      if ($(window).width() < 992) {
+        setWidth("90%");
+      } else {
+        $(".Search").removeClass("container pt-3");
+        setWidth("50%");
+      }
+    }
+    adjustSearch();
+    $(window).resize(function () {
+      adjustSearch();
+    });
+  });
+
   return (
     <>
       <Modal
-        width={"50%"}
+        width={width}
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
       >
         <Space direction="vertical" size={"middle"}>
-          <Flex
-            className="main1 marginBottom"
-            align="center"
-            justify="center"
-            gap={20}
-          >
-            <div className="left">
-              <Image
-                className="image"
-                width={300}
-                height={200}
-                src="https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-xa-la-3_1696826188.jpg"
+          <div className="main1 marginBottom">
+            <div className="left mt-4 border-3 border">
+              <img
+                className="border-3 border"
+                width={"100%"}
+                src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg"
               />
             </div>
-            <div
-              className="right"
-              style={{
-                padding: 20,
-              }}
-            >
+            <div className="right">
               <h2 className="title">Mường Thanh Grand Xa La</h2>
               <Space className="address">
                 <svg
@@ -85,12 +91,16 @@ function Detail() {
               </div>
               <div className="description">
                 <strong>Khách sạn Mường Thanh Grand Xa La</strong>
+                nằm trong khuôn viên Khu đô thị mới Xala hiện đại, yên tĩnh và
+                trong lành, ngay tại trung tâm Quận Hà Đông, Hà Nội. Thoải mái
+                và tiện nghi là những cảm nhận đầu tiên khi du khách đặt chân
+                đến nơi đây.
               </div>
             </div>
-          </Flex>
+          </div>
           <h5>Tiện ích trong phòng</h5>
           <Row>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
                 <Tooltip title="Tủ quần áo">
                   <img
@@ -102,7 +112,7 @@ function Detail() {
                 <div>Tủ quần áo</div>
               </Space>
             </Col>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
                 <Tooltip title="Ga trải giường, gối">
                   <img
@@ -116,7 +126,7 @@ function Detail() {
             </Col>
           </Row>
           <Row>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
                 <Tooltip title="Tủ quần áo">
                   <img
@@ -128,7 +138,7 @@ function Detail() {
                 <div>Tủ quần áo</div>
               </Space>
             </Col>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
                 <Tooltip title="Ga trải giường, gối">
                   <img
@@ -142,7 +152,7 @@ function Detail() {
             </Col>
           </Row>
           <Row>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
                 <Tooltip title="Tủ quần áo">
                   <img
@@ -154,7 +164,7 @@ function Detail() {
                 <div>Tủ quần áo</div>
               </Space>
             </Col>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
                 <Tooltip title="Ga trải giường, gối">
                   <img
@@ -281,15 +291,6 @@ function Detail() {
                 và tiện nghi là những cảm nhận đầu tiên khi du khách đặt chân
                 đến nơi đây.
               </div>
-              <div
-                onClick={showModal}
-                style={{
-                  cursor: "pointer",
-                  color: "var(--primary-Color",
-                }}
-              >
-                Xem chi tiết
-              </div>
             </div>
           </div>
           <div className="main2 marginBottom">
@@ -374,7 +375,7 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                          <div className="price">2,142,000 VNĐ</div>/đêm
+                        <div className="price">2,142,000 VNĐ</div>/đêm
                       </Space>
                     </div>
                     <div className="button">
@@ -382,6 +383,15 @@ function Detail() {
                         <button>Chọn phòng</button>
                       </Link>
                     </div>
+                  </div>
+                  <div
+                    onClick={showModal}
+                    style={{
+                      cursor: "pointer",
+                      color: "var(--primary-Color",
+                    }}
+                  >
+                    Xem chi tiết
                   </div>
                 </Space>
               </div>
@@ -461,12 +471,25 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                          <div className="price">2,142,000 VNĐ</div>/đêm
+                        <div className="price">2,142,000 VNĐ</div>/đêm
                       </Space>
                     </div>
                     <div className="button">
-                      <button style={{ backgroundColor: "var(--secondary-Color)" }}>Hết phòng</button>
+                      <button
+                        style={{ backgroundColor: "var(--secondary-Color)" }}
+                      >
+                        Hết phòng
+                      </button>
                     </div>
+                  </div>
+                  <div
+                    onClick={showModal}
+                    style={{
+                      cursor: "pointer",
+                      color: "var(--primary-Color",
+                    }}
+                  >
+                    Xem chi tiết
                   </div>
                 </Space>
               </div>
@@ -546,7 +569,7 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                          <div className="price">2,142,000 VNĐ</div>/đêm
+                        <div className="price">2,142,000 VNĐ</div>/đêm
                       </Space>
                     </div>
                     <div className="button">
@@ -554,6 +577,15 @@ function Detail() {
                         <button>Chọn phòng</button>
                       </Link>
                     </div>
+                  </div>
+                  <div
+                    onClick={showModal}
+                    style={{
+                      cursor: "pointer",
+                      color: "var(--primary-Color",
+                    }}
+                  >
+                    Xem chi tiết
                   </div>
                 </Space>
               </div>

@@ -1,3 +1,4 @@
+
 import BookingLayout from "../layouts/BookingLayout";
 import DefaultLayout from "../layouts/DefaultLayout";
 import Booking from "../pages/Booking";
