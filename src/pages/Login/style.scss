@@ -28,6 +28,13 @@
     .main {
       .nav-tabs {
         padding-bottom: 10px;
+        .nav-link{
+          padding: 20px;
+          text-transform: capitalize;
+          font-size: 18px;
+          padding-bottom: 10px;
+          border: none;
+        }
         a.active {
           padding: 20px;
           border-bottom: 4px solid #f2a900;
@@ -48,13 +55,13 @@
         padding-left: 1rem !important;
       }
       .box {
-        margin-top: 20px;
+        margin-top: 15px;
         font-size: 16px;
         color: #6d6e70;
         position: relative;
         .svg {
           position: absolute;
-          top: 50%;
+          top: 25px;
           left: 10px;
           transform: translateY(-50%);
         }
@@ -75,7 +82,12 @@
             border-color: #f2a900 !important;
           }
         }
-        .submitLogin {
+        .error-message {
+          color: red;
+          font-size: 14px;
+          
+      }
+        .submitLogin, .submitRegister {
           width: 100%;
           border: none;
           background-color: #f2a900;
@@ -93,6 +105,7 @@
             border: 1px solid #f2a900 !important;
             color: #f2a900 !important;
           }
+          
         }
       }
     }
