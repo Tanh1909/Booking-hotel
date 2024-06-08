@@ -48,7 +48,7 @@ function Booking() {
     },
     {
       imgLink:
-        "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-xa-la-3_1696826188.jpg",
+        "https://booking.muongthanh.com/images/hotels/hotels/original/sm-3-min_1664158521_1691476781.jpg",
       title: "Mường Thanh Holiday Suối Mơ",
       description: ` Số 66, đường Phúc La, khu đô thị Xa La, phường Phúc
                           La, quận Hà Đông, Hà Nội, Việt Nam`,

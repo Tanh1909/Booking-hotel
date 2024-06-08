@@ -49,8 +49,9 @@ function Detail() {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
+        style={{ marginTop: -70 }}
       >
-        <Space direction="vertical" size={"middle"}>
+        <Space direction="vertical" size={"small"}>
           <div className="main1 marginBottom">
             <div className="left mt-4 border-3 border">
               <img
@@ -60,41 +61,12 @@ function Detail() {
               />
             </div>
             <div className="right">
-              <h2 className="title">Mường Thanh Grand Xa La</h2>
-              <Space className="address">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 6.66666C14 11.3333 8 15.3333 8 15.3333C8 15.3333 2 11.3333 2 6.66666C2 5.07536 2.63214 3.54923 3.75736 2.42402C4.88258 1.2988 6.4087 0.666656 8 0.666656C9.5913 0.666656 11.1174 1.2988 12.2426 2.42402C13.3679 3.54923 14 5.07536 14 6.66666Z"
-                    stroke="#626262"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M8 8.66666C9.10457 8.66666 10 7.77123 10 6.66666C10 5.56209 9.10457 4.66666 8 4.66666C6.89543 4.66666 6 5.56209 6 6.66666C6 7.77123 6.89543 8.66666 8 8.66666Z"
-                    stroke="#626262"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-                Số 66, đường Phúc La, khu đô thị Xa La, phường Phúc La, quận Hà
-                Đông, Hà Nội, Việt Nam
-              </Space>
-              <div className="phone">
-                Điện thoại:{" "}
-                <span style={{ fontWeight: "bold" }}>+84 24 3311 5555</span>
+              <h2 className="title pt-2">Phòng Deluxe King hướng thành phố</h2>
+              <div class="mb-2">
+                45 m2
               </div>
-              <div className="description">
-                <strong>Khách sạn Mường Thanh Grand Xa La</strong>
-                nằm trong khuôn viên Khu đô thị mới Xala hiện đại, yên tĩnh và
-                trong lành, ngay tại trung tâm Quận Hà Đông, Hà Nội. Thoải mái
-                và tiện nghi là những cảm nhận đầu tiên khi du khách đặt chân
-                đến nơi đây.
+              <div style={{textAlign: "justify"}}>
+                Phòng với diện tích 45 m2, một giường king size, không gian rộng rãi, đầy đủ các thiết bị nội thất, đem lại sự thoải mái nhất cho kì nghỉ dưỡng cũng như các chuyến công tác làm việc dài hạn.
               </div>
             </div>
           </div>
@@ -109,7 +81,7 @@ function Detail() {
                     src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
                   />
                 </Tooltip>
-                <div>Tủ quần áo</div>
+                <div className="pe-2">Tủ quần áo</div>
               </Space>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -128,104 +100,156 @@ function Detail() {
           <Row>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Tủ quần áo">
+                <Tooltip title="Phòng không hút thuốc">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/no-smoking_1709957396.png"
                   />
                 </Tooltip>
-                <div>Tủ quần áo</div>
+                <div className="pe-2">Phòng không hút thuốc</div>
               </Space>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Ga trải giường, gối">
+                <Tooltip title="Phòng tắm - Vòi sen">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/voi-sen_1709957719.png"
                   />
                 </Tooltip>
-                <div>Ga trải giường</div>
+                <div>Phòng tắm - Vòi sen</div>
               </Space>
             </Col>
           </Row>
           <Row>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Tủ quần áo">
+                <Tooltip title="Quầy bar mini">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/bar_1709957295.png"
                   />
                 </Tooltip>
-                <div>Tủ quần áo</div>
+                <div className="pe-2">Quầy bar mini</div>
               </Space>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Ga trải giường, gối">
+                <Tooltip title="Điều hòa">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/air-conditioner_1709958073.png"
                   />
                 </Tooltip>
-                <div>Ga trải giường</div>
+                <div>Điều hòa</div>
               </Space>
             </Col>
           </Row>
           <Row>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Tủ quần áo">
+                <Tooltip title="Dịch vụ giặt ủi">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/laundry_1709957928.png"
                   />
                 </Tooltip>
-                <div>Tủ quần áo</div>
+                <div className="pe-2">Dịch vụ giặt ủi</div>
               </Space>
             </Col>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Ga trải giường, gối">
+                <Tooltip title="Máy sấy tóc">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/may-say_1709957595.png"
                   />
                 </Tooltip>
-                <div>Ga trải giường</div>
+                <div>Máy sấy tóc</div>
               </Space>
             </Col>
           </Row>
           <Row>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Tủ quần áo">
+                <Tooltip title="Bồn tắm">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wardrobe_1709957976.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/bath-tub_1709957703.png"
                   />
                 </Tooltip>
-                <div>Tủ quần áo</div>
+                <div className="pe-2">Bồn tắm</div>
               </Space>
             </Col>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
               <Space size={"middle"}>
-                <Tooltip title="Ga trải giường, gối">
+                <Tooltip title="Wifi">
                   <img
                     width={20}
                     height={20}
-                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/sheet_1709958228.png"
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/wifi_1709956983.png"
                   />
                 </Tooltip>
-                <div>Ga trải giường</div>
+                <div>Wifi</div>
+              </Space>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Đồ phòng tắm">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/-phong-tam_1709958924.png"
+                  />
+                </Tooltip>
+                <div className="pe-2">Đồ phòng tắm</div>
+              </Space>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Két sắt an toàn">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/ket-sat_1709956830.png"
+                  />
+                </Tooltip>
+                <div>Két sắt an toàn</div>
+              </Space>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Điện thoại">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/t-ban_1709958825.png"
+                  />
+                </Tooltip>
+                <div className="pe-2">Điện thoại</div>
+              </Space>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <Space size={"middle"}>
+                <Tooltip title="Đèn bàn">
+                  <img
+                    width={20}
+                    height={20}
+                    src="https://booking.muongthanh.com/images/rooms/service/2024/03/original/n-ban_1709958701.png"
+                  />
+                </Tooltip>
+                <div>Đèn bàn</div>
               </Space>
             </Col>
           </Row>
@@ -328,7 +352,7 @@ function Detail() {
                           fill="black"
                         ></path>
                       </svg>
-                      <span>1 giường queen size</span>
+                      <span>1 giường king size</span>
                     </Space>
                     <Space>
                       <svg
@@ -343,7 +367,7 @@ function Detail() {
                           fill="black"
                         ></path>
                       </svg>
-                      <span>30 m2</span>
+                      <span>45 m2</span>
                     </Space>
                   </Space>
                   <div className="service">
@@ -398,7 +422,7 @@ function Detail() {
             </div>
             <div className="item row m-0 mb-4">
               <div className="image col-sm-5 col-md-5 col-lg-5">
-                <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
+                <img src="https://booking.muongthanh.com/images/hotels/rooms/resize/triple-bed-01_1711002711.jpg" />
               </div>
               <div className="content col-sm-7 col-md-7 col-lg-7">
                 <Space
@@ -407,7 +431,7 @@ function Detail() {
                   size={"large"}
                 >
                   <div className="title">
-                    <strong>Phòng Deluxe King hướng thành phố</strong>
+                    <strong>Phòng Deluxe Triple</strong>
                   </div>
                   <Space align="center" size={"large"}>
                     <Space>
@@ -424,7 +448,7 @@ function Detail() {
                           fill="black"
                         ></path>
                       </svg>
-                      <span>1 giường queen size</span>
+                      <span>3 giường twin</span>
                     </Space>
                     <Space>
                       <svg
@@ -439,7 +463,7 @@ function Detail() {
                           fill="black"
                         ></path>
                       </svg>
-                      <span>30 m2</span>
+                      <span>54 m2</span>
                     </Space>
                   </Space>
                   <div className="service">
@@ -471,7 +495,7 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                        <div className="price">2,142,000 VNĐ</div>/đêm
+                        <div className="price">2,299,500 VNĐ</div>/đêm
                       </Space>
                     </div>
                     <div className="button">
@@ -496,7 +520,7 @@ function Detail() {
             </div>
             <div className="item row m-0 mb-4">
               <div className="image col-sm-5 col-md-5 col-lg-5">
-                <img src="https://booking.muongthanh.com/images/rooms/2023/03/08/resize/deluxe-king-city-view-7_1678260646.jpg" />
+                <img src="https://booking.muongthanh.com/images/hotels/rooms/resize/king-bed-01_1711002914.jpg" />
               </div>
               <div className="content col-sm-7 col-md-7 col-lg-7">
                 <Space
@@ -505,7 +529,7 @@ function Detail() {
                   size={"large"}
                 >
                   <div className="title">
-                    <strong>Phòng Deluxe King hướng thành phố</strong>
+                    <strong>Phòng Deluxe Family</strong>
                   </div>
                   <Space align="center" size={"large"}>
                     <Space>
@@ -522,7 +546,7 @@ function Detail() {
                           fill="black"
                         ></path>
                       </svg>
-                      <span>1 giường queen size</span>
+                      <span>2 giường king size</span>
                     </Space>
                     <Space>
                       <svg
@@ -537,7 +561,7 @@ function Detail() {
                           fill="black"
                         ></path>
                       </svg>
-                      <span>30 m2</span>
+                      <span>54 m2</span>
                     </Space>
                   </Space>
                   <div className="service">
@@ -569,7 +593,7 @@ function Detail() {
                     <div className="price">
                       <Space direction="vertical">
                         Giá chỉ từ
-                        <div className="price">2,142,000 VNĐ</div>/đêm
+                        <div className="price">2,835,000 VNĐ</div>/đêm
                       </Space>
                     </div>
                     <div className="button">
