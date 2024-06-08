@@ -138,7 +138,7 @@ function Login() {
       {contextHolder}
       <div className="Login">
         <div className="row">
-          <div className="col-7 col-xs-0 col-sm-0 col-md-0 col-lg-7 col-xl-7">
+          <div className="col-0 col-xs-0 col-sm-0 col-md-0 col-lg-7 col-xl-7">
             <div className="left">
               <div className="summary">
                 <div className="title">
@@ -151,7 +151,7 @@ function Login() {
               </div>
             </div>
           </div>
-          <div class="col-5 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" >
+          <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" >
             <div className="right">
               <div class="main">
                 <div class="d-flex justify-content-center align-items-end mb-3">

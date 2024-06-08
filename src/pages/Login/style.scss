@@ -1,6 +1,6 @@
 .Login {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   overflow: hidden;
   .left {
     height: 100vh;
@@ -25,6 +25,7 @@
   }
   .right {
     padding: 40px;
+    height: 100vh;
     .main {
       .nav-tabs {
         padding-bottom: 10px;
@@ -111,3 +112,4 @@
     }
   }
 }
+
