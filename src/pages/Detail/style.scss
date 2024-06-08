@@ -54,15 +54,15 @@
           }
         }
         .content {
-          width: 100%;
+          // width: 100%;
           padding: 20px;
           .title {
             font-weight: 700;
             font-size: 20px;
             color: #3c3c3b;
           }
-          .service {
-          }
+          // .service {
+          // }
           .footer {
             width: 100%;
             display: flex;
@@ -128,4 +128,5 @@
       }
     }
   }
+  
 }

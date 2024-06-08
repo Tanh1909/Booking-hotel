@@ -2,7 +2,7 @@ import "./style.scss";
 import $ from "jquery";
 import 'bootstrap';
 import {
-  ArrowRightOutlined,
+  // ArrowRightOutlined,
   FacebookFilled,
   InstagramOutlined,
   PhoneOutlined,
@@ -80,7 +80,7 @@ function Footer() {
     $(".footerBtn").click(function (event) {
       event.preventDefault();
       if (checkEmailInput()) {
-        $('#thankYouModal').modal('show');
+        window.$('#thankYouModal').modal('show');
       }
     });
 
@@ -216,13 +216,13 @@ function Footer() {
               />
             </div>
             <div className="footerSession3Item col-lg-4 d-flex justify-content-end align-items-center">
-              <span className="pe-3" style={{ fontSize: 24 }}>
+              <span className="footerSession3Link pe-3" style={{ fontSize: 24 }}>
                 <FacebookFilled></FacebookFilled>
               </span>
-              <span className="pe-3" style={{ fontSize: 24 }}>
+              <span className="footerSession3Link pe-3" style={{ fontSize: 24 }}>
                 <InstagramOutlined></InstagramOutlined>
               </span>
-              <span style={{ fontSize: 24 }}>
+              <span className="footerSession3Link" style={{ fontSize: 24 }}>
                 <YoutubeFilled></YoutubeFilled>
               </span>
             </div>

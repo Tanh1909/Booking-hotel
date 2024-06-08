@@ -51,7 +51,7 @@ function Search({ booking }) {
     <>
       <div className={"Search" + (booking ? " Booking" : "")}>
         {/* <Button type="primary"></Button> */}
-        <div className="container">
+        <div className="container pt-2 pb-3">
           <Form
             initialValues={value}
             layout="vertical"

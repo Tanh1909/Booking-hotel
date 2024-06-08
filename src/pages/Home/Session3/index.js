@@ -9,8 +9,8 @@ function Session3() {
       <div className="Session3">
         <div className="container">
           <div className="title">
-            <span>ĐIỂM ĐẾN</span>
-            NỔI BẬT
+            <span className="spanLeft">ĐIỂM ĐẾN</span>
+            <span> NỔI BẬT</span>
           </div>
           <OwlCarouselCustom autoplay={true}>
             <div className="item">

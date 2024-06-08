@@ -217,7 +217,7 @@ function Payment() {
                           label={<div className="label">Yêu cầu thêm</div>}
                         >
                           <TextArea
-                            placeholder="ví dụ: Sở thích về Giường, địa điểm đón hoặc trả khách"
+                            placeholder="Ví dụ: Sở thích về Giường, địa điểm đón hoặc trả khách..."
                             style={{
                               height: 120,
                             }}
@@ -275,20 +275,16 @@ function Payment() {
                         <div className="list">
                           <div className="title">Phòng Deluxe Twin</div>
                           <div className="text">
-                            <Space>
-                              <strong>Hủy:</strong>
+                              <strong>Hủy: </strong>
                               Nếu hủy, thay đổi hoặc không đến, khách sẽ trả
                               toàn bộ giá trị tiền đặt phòng.
-                            </Space>
                           </div>
                           <div className="text">
-                            <Space>
-                              <strong>Thanh toán:</strong>
+                              <strong>Thanh toán: </strong>
                               Thanh toán toàn bộ giá trị tiền đặt phòng.
-                            </Space>
                           </div>
                           <div className="text">
-                            <strong>Đã bao gồm ăn sáng</strong>
+                            <strong>Đã bao gồm ăn sáng.</strong>
                           </div>
                         </div>
                       </Space>
