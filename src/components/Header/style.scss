@@ -28,7 +28,7 @@
     .logo {
       transition: 0.3s ease-in-out;
       height: 80px;
-      margin-left: -50px;
+      margin-left: -15px;
     }
   }
   .right {
@@ -72,13 +72,18 @@
       }
     }
     .left,
-    .right {
+    .right .menu,
+    .right .select {
       display: none;
+    }
+    .right .login {
+      display: flex;
+      margin-right: -50px;
     }
     .middle {
       width: 120px;
       .logo {
-        margin-left: 0;
+        margin-left: 80%;
         width: 120px;
         height: 50px;
       }
@@ -86,5 +91,21 @@
   }
   .ant-picker-panels {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Header {
+    .responsive {
+      margin-left: -15px;
+    }
+    .right .login {
+      display: flex;
+      margin-right: -50px;
+    }
+    .middle {
+      .logo {
+        margin-left: 40%;
+      }
+    }
   }
 }
