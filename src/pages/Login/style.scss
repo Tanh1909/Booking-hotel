@@ -29,7 +29,7 @@
     .main {
       .nav-tabs {
         padding-bottom: 10px;
-        .nav-link{
+        .nav-link {
           padding: 20px;
           text-transform: capitalize;
           font-size: 18px;
@@ -86,9 +86,9 @@
         .error-message {
           color: red;
           font-size: 14px;
-          
-      }
-        .submitLogin, .submitRegister {
+        }
+        .submitLogin,
+        .submitRegister {
           width: 100%;
           border: none;
           background-color: #f2a900;
@@ -106,10 +106,15 @@
             border: 1px solid #f2a900 !important;
             color: #f2a900 !important;
           }
-          
         }
       }
     }
   }
 }
-
+@media screen and (max-width: 992px) {
+  .Login {
+    .left {
+      display: none;
+    }
+  }
+}

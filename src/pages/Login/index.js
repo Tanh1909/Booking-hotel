@@ -38,9 +38,9 @@ function Login() {
     password: "",
   });
   const [api, contextHolder] = notification.useNotification();
-  const openNotificationWithIcon = (type) => {
+  const openNotificationWithIcon = (type, mess) => {
     api[type]({
-      message: "Sai tài khoản hoặc mật khẩu",
+      message: mess,
       duration: 1,
     });
     console.log(type);
@@ -67,70 +67,75 @@ function Login() {
       }
     });
     if (!login) {
-      openNotificationWithIcon("error");
+      openNotificationWithIcon("error", "Sai tài khoản hoặc mật khẩu");
     }
   };
 
-  function checkInput() {
+  function checkInput(event) {
+    event.preventDefault();
     var isValid = true;
     // Validate email
-    var email = $('#res_email').val();
+    var email = $("#res_email").val();
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (email.trim() === '') {
-      $('#res_email').next('.error-message').text('Email không được để trống.');
+    if (email.trim() === "") {
+      $("#res_email").next(".error-message").text("Email không được để trống.");
       isValid = false;
     } else if (!emailPattern.test(email)) {
-      $('#res_email').next('.error-message').text('Email không hợp lệ.');
+      $("#res_email").next(".error-message").text("Email không hợp lệ.");
       isValid = false;
     } else {
-      $('#res_email').next('.error-message').text('');
+      $("#res_email").next(".error-message").text("");
     }
 
     // Validate name
-    var name = $('#res_name').val();
+    var name = $("#res_name").val();
     var namePattern = /^[a-zA-ZÀ-ỹ\s]{2,50}$/;
     if (!namePattern.test(name)) {
-      $('#res_name').next('.error-message').text('Tên không hợp lệ.');
+      $("#res_name").next(".error-message").text("Tên không hợp lệ.");
       isValid = false;
-    } else if (name.trim() === '') {
-      $('#res_name').next('.error-message').text('Tên không được để trống.');
+    } else if (name.trim() === "") {
+      $("#res_name").next(".error-message").text("Tên không được để trống.");
       isValid = false;
     } else {
-      $('#res_name').next('.error-message').text('');
+      $("#res_name").next(".error-message").text("");
     }
 
     // Validate password
-    var password = $('#res_pass').val();
+    var password = $("#res_pass").val();
     if (password.length < 6) {
-      $('#res_pass').next('.error-message').text('Mật khẩu phải lớn hơn 6 kí tự.');
+      $("#res_pass")
+        .next(".error-message")
+        .text("Mật khẩu phải lớn hơn 6 kí tự.");
       isValid = false;
     } else {
-      $('#res_pass').next('.error-message').text('');
+      $("#res_pass").next(".error-message").text("");
     }
 
     // Validate phone
-    var phone = $('#res_phone').val();
+    var phone = $("#res_phone").val();
     var phonePattern = /^[0-9]{10}$/;
-    if (!phonePattern.test(phone) || phone.trim() === '') {
-      $('#res_phone').next('.error-message').text('Số điện thoại không hợp lệ.');
+    if (!phonePattern.test(phone) || phone.trim() === "") {
+      $("#res_phone")
+        .next(".error-message")
+        .text("Số điện thoại không hợp lệ.");
       isValid = false;
     } else {
-      $('#res_phone').next('.error-message').text('');
+      $("#res_phone").next(".error-message").text("");
     }
 
     if (isValid) {
-      $('#successModal').modal('show');
+      openNotificationWithIcon("success", "Đăng ký thành công!");
     }
 
     return false; // Prevent form submission
   }
 
   $(".resInput").on("focus", function () {
-    $(this).next('.error-message').hide();
+    $(this).next(".error-message").hide();
   });
 
   $(".resInput").on("blur", function () {
-    $(this).next('.error-message').show();
+    $(this).next(".error-message").show();
   });
 
   return (
@@ -151,7 +156,7 @@ function Login() {
               </div>
             </div>
           </div>
-          <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5" >
+          <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
             <div className="right">
               <div class="main">
                 <div class="d-flex justify-content-center align-items-end mb-3">
@@ -161,55 +166,34 @@ function Login() {
                       alt="logo"
                     />
                   </Link>
-
-                  <svg
-                    width="1"
-                    height="100"
-                    viewBox="0 0 1 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      width="1"
-                      height="100"
-                      fill="url(#paint0_linear_2422_22009)"
-                    ></rect>
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_2422_22009"
-                        x1="0.5"
-                        y1="0"
-                        x2="0.5"
-                        y2="100"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#D9D9D9" stop-opacity="0"></stop>
-                        <stop offset="0.510417" stop-color="#CCCCCC"></stop>
-                        <stop
-                          offset="1"
-                          stop-color="#D9D9D9"
-                          stop-opacity="0"
-                        ></stop>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div class="ps-3 d-flex align-items-center">
-                    <img
-                      src="https://booking.muongthanh.com/images/gold-mt-logo.svg"
-                      alt="golf-mt-logo"
-                      class="img-responsive"
-                    />
-                  </div>
                 </div>
 
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs justify-content-around" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#Log" role="tab"
-                      aria-controls="Log" aria-selected="true">Đăng nhập / Login</a>
+                    <a
+                      class="nav-link active"
+                      id="login-tab"
+                      data-bs-toggle="tab"
+                      href="#Log"
+                      role="tab"
+                      aria-controls="Log"
+                      aria-selected="true"
+                    >
+                      Đăng nhập / Login
+                    </a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#Res" role="tab"
-                      aria-controls="Res" aria-selected="false">Đăng kí / Register</a>
+                    <a
+                      class="nav-link"
+                      id="register-tab"
+                      data-bs-toggle="tab"
+                      href="#Res"
+                      role="tab"
+                      aria-controls="Res"
+                      aria-selected="false"
+                    >
+                      Đăng kí / Register
+                    </a>
                   </li>
                 </ul>
                 <div class="tab-content">
@@ -340,14 +324,17 @@ function Login() {
                       onSubmit={checkInput}
                     >
                       <div class="box">
-
                         <div class="svg">
-                          <i class="fas fa-envelope" style={{
-                            width: "20",
-                            height: "20",
-                            viewBox: "0 0 20 20",
-                            fill: "none", color: "#3C3C3B"
-                          }}></i>
+                          <i
+                            class="fas fa-envelope"
+                            style={{
+                              width: "20",
+                              height: "20",
+                              viewBox: "0 0 20 20",
+                              fill: "none",
+                              color: "#3C3C3B",
+                            }}
+                          ></i>
                         </div>
 
                         <input
@@ -357,18 +344,23 @@ function Login() {
                           class="form-control resInput"
                           placeholder="Email *"
                         />
-                        <div className="error-message mt-2" style={{ fontSize: 14 }}></div>
-
-
+                        <div
+                          className="error-message mt-2"
+                          style={{ fontSize: 14 }}
+                        ></div>
                       </div>
                       <div class="box">
                         <div class="svg">
-                          <i class="fas fa-user" style={{
-                            width: "20",
-                            height: "20",
-                            viewBox: "0 0 20 20",
-                            fill: "none", color: "#3C3C3B"
-                          }}></i>
+                          <i
+                            class="fas fa-user"
+                            style={{
+                              width: "20",
+                              height: "20",
+                              viewBox: "0 0 20 20",
+                              fill: "none",
+                              color: "#3C3C3B",
+                            }}
+                          ></i>
                         </div>
                         <input
                           id="res_name"
@@ -377,8 +369,10 @@ function Login() {
                           class="form-control resInput"
                           placeholder="Họ tên *"
                         />
-                        <p className="error-message mt-2" style={{ fontSize: 14 }}></p>
-
+                        <p
+                          className="error-message mt-2"
+                          style={{ fontSize: 14 }}
+                        ></p>
                       </div>
                       <div class="box">
                         <div class="svg">
@@ -416,8 +410,10 @@ function Login() {
                           class="form-control resInput"
                           placeholder="Mật khẩu *"
                         />
-                        <div className="error-message mt-2" style={{ fontSize: 14 }}></div>
-
+                        <div
+                          className="error-message mt-2"
+                          style={{ fontSize: 14 }}
+                        ></div>
                       </div>
                       <div class="box">
                         <div class="svg">
@@ -455,16 +451,19 @@ function Login() {
                           class="form-control"
                           placeholder="Nhập lại mật khẩu *"
                         />
-
                       </div>
                       <div class="box">
                         <div class="svg">
-                          <i class="fas fa-phone" style={{
-                            width: "20",
-                            height: "20",
-                            viewBox: "0 0 20 20",
-                            fill: "none", color: "#3C3C3B"
-                          }}></i>
+                          <i
+                            class="fas fa-phone"
+                            style={{
+                              width: "20",
+                              height: "20",
+                              viewBox: "0 0 20 20",
+                              fill: "none",
+                              color: "#3C3C3B",
+                            }}
+                          ></i>
                         </div>
                         <input
                           id="res_phone"
@@ -473,8 +472,10 @@ function Login() {
                           class="form-control resInput"
                           placeholder="Số điện thoại *"
                         />
-                        <p className="error-message mt-2" style={{ fontSize: 14 }}></p>
-
+                        <p
+                          className="error-message mt-2"
+                          style={{ fontSize: 14 }}
+                        ></p>
                       </div>
 
                       <div class="box">
@@ -485,7 +486,6 @@ function Login() {
                         >
                           Đăng kí/Register
                         </button>
-
                       </div>
                     </form>
                   </div>
@@ -530,7 +530,6 @@ function Login() {
           </div>
         </div>
       </div>
-
     </>
   );
 }
